@@ -367,6 +367,10 @@ EXECUTE_FAIL:
             }
             if (oiram.vy < 8) { oiram.vy++; }
         } else {
+            if (oiram.on_vine) { // reset sprite if touching ground
+                oiram.on_vine = false;
+                set_normal_oiram_sprites();
+            }
             oiram.score_chain = 0;
             oiram.is_flying = false;
             oiram.fly_count = 9;
